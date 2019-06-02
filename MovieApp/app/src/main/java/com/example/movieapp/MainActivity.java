@@ -100,9 +100,8 @@ public class MainActivity extends AppCompatActivity {
                 pd.dismiss();
                 return;
             }
-            Client client = new Client();
-            Service apiService =
-                    Client.getClient().create(Service.class);
+
+            Service apiService = Client.getClient().create(Service.class);
             Call<MoviesResponse> call = apiService.getPopularMovies(BuildConfig.THE_MOVIE_DB_API_TOKEN);
             call.enqueue(new Callback<MoviesResponse>() {
                 @Override
